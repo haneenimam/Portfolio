@@ -1,0 +1,11 @@
+[build]
+  command = "ng build --configuration=production"
+  publish = "dist/haneen-portfolio"
+
+[[plugins]]
+  package = "@netlify/plugin-ignore"
+
+[[plugins]]
+  package = "@netlify/angular-runtime"
+  [plugins.inputs]
+  disable = true
