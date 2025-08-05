@@ -1,0 +1,19 @@
+.project-card {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  background-color: #000;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  .overlay {
+    background: rgba(0, 0, 0, 0.85);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover .overlay {
+    opacity: 1;
+  }
+}
