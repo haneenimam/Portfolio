@@ -1,0 +1,11 @@
+Haneen Hamada Imam
+Haneenimam99@gmail.com
+https://www.linkedin.com/in/haneen-imam/
+Cairo, Egypt
++201020451321
+github.com/haneenimam
+
+PROFILE
+Full Stack Web Developer using MEARN skilled in designing and building full-stack web applications using MongoDB, Express.js, React.js, and Node.js.
+
+(Download this file. Replace with your PDF by placing resume.pdf in public/assets/resume.pdf)

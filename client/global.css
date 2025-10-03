@@ -1,0 +1,133 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    /* Light mode - muted palette: soft blue primary, sage accent, neutral backgrounds */
+    --background: 210 40% 98%; /* very light gray */
+    --foreground: 218 14% 12%; /* dark slate */
+
+    --card: 0 0% 100%;
+    --card-foreground: 218 14% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 218 14% 12%;
+
+    --primary: 214 35% 34%; /* soft muted blue */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 218 14% 12%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 46%;
+
+    --accent: 142 24% 85%; /* sage */
+    --accent-foreground: 218 14% 12%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 14% 92%;
+    --input: 220 14% 92%;
+    --ring: 214 35% 34%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 210 40% 96%;
+
+    --sidebar-foreground: 218 14% 12%;
+
+    --sidebar-primary: 214 35% 34%;
+
+    --sidebar-primary-foreground: 0 0% 100%;
+
+    --sidebar-accent: 142 24% 85%;
+
+    --sidebar-accent-foreground: 218 14% 12%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217 91% 60%;
+  }
+
+  .dark {
+    /* Dark mode - deep neutral background with soft accents */
+    --background: 220 14% 6%; /* near-black */
+    --foreground: 210 40% 98%; /* white */
+
+    --card: 220 14% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 14% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 214 35% 34%;
+
+    --secondary: 217 20% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 20% 12%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 142 24% 45%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 20% 12%;
+    --input: 217 20% 12%;
+    --ring: 214 35% 34%;
+    --sidebar-background: 224 10% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 214 35% 34%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 142 24% 45%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 224 10% 6%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased transition-colors duration-300;
+  }
+  html { scroll-behavior: smooth; }
+
+  /* Modern card shadow */
+  .shadow-sm { box-shadow: 0 4px 12px rgba(16,24,40,0.04); }
+  .shadow-md { box-shadow: 0 10px 30px rgba(16,24,40,0.06); }
+
+  /* Button subtle */
+  .btn-subtle { @apply rounded-md px-4 py-2 text-sm font-medium transition; }
+
+  /* Toggle transition override */
+  .toggle-knob { transition: transform .25s cubic-bezier(.2,.9,.3,1); }
+
+  /* Reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.9,.3,1); }
+  .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+  /* Focus-visible helpers */
+  :focus { outline: none; }
+  :focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(99,102,241,0.12); border-radius: .5rem; }
+
+  /* sr-only visible on focus */
+  .sr-only-visible { position: static; width: auto; height: auto; margin: 8px; padding: 6px 8px; background: hsl(var(--card)); color: hsl(var(--foreground)); border-radius: 6px; }
+}
