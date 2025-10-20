@@ -13,11 +13,11 @@ const projects = [
   },
   {
     title: "Flyee – Flight Booking App",
-    img: "/images/logo.png",
+    img: "/images/flyee.png",
     desc:
-      "Responsive React website with routing, search form, and a styled UI.",
-    live: "https://classy-rugelach-d98ec4.netlify.app/",
-    github: "https://github.com/haneenimam/flyee",
+      "A modern full-stack flight booking application utilizing Next.js and Node.js(Express) API. Features a responsive UI, robust search and efficient data handling",
+    live: "https://flyee-fullstack-z7qg.vercel.app/",
+    github: "https://github.com/haneenimam/FLYEE-Fullstack",
   },
 ];
 
@@ -61,7 +61,7 @@ export default function Projects() {
                   <a
                     className={cn(
                       buttonVariants({ variant: "outline", size: "sm" }),
-                      "text-black border-white/80"
+                      "bg-white text-black border-white/80"
                     )}
                     href={p.github}
                     target="_blank"
