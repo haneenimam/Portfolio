@@ -1,4 +1,5 @@
 import SectionHeading from "@/components/SectionHeading";
+import { useState } from "react";
 
 const skills = [
   "HTML5",
@@ -41,6 +42,8 @@ function slugFor(name: string) {
 }
 
 export default function Skills() {
+  const [imgError, setImgError] = useState<Record<string, boolean>>({});
+
   return (
     <section id="skills" className="scroll-mt-28 py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-4">
@@ -63,14 +66,21 @@ export default function Skills() {
                   className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-lg"
                   style={{ backgroundColor: `${meta.color}20` }}
                 >
-                  <img
-                    src={iconUrl}
-                    alt={s}
-                    className="h-6 w-6"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).style.display = "none";
-                    }}
-                  />
+                  {!imgError[s] ? (
+                    <img
+                      src={iconUrl}
+                      alt={s}
+                      className="h-6 w-6"
+                      onError={() => setImgError((prev) => ({ ...prev, [s]: true }))}
+                    />
+                  ) : (
+                    <svg className="h-6 w-6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden>
+                      <rect width="24" height="24" rx="4" fill={meta.color} />
+                      <text x="50%" y="55%" textAnchor="middle" fill="#fff" fontSize="9" fontWeight="600">
+                        {s.replace(/[^A-Za-z0-9]/g, "").slice(0, 3).toUpperCase()}
+                      </text>
+                    </svg>
+                  )}
                 </div>
                 <div className="text-sm font-medium text-foreground">{s}</div>
               </div>

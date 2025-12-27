@@ -69,7 +69,17 @@ export default function Navbar() {
               </a>
             );
           })}
+          <a
+            href="/Haneen-Hamada-Imam.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Open Resume"
+          >
+            Resume
+          </a>
           <ThemeToggle />
+         
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
@@ -108,8 +118,17 @@ export default function Navbar() {
               );
             })}
           </div>
-          <div>
+          <div className="flex flex-col items-end gap-2">
             <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground">Contact</a>
+            <a
+              href="/Haneen-Hamada-Imam.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm text-muted-foreground hover:text-foreground"
+              onClick={() => setOpen(false)}
+            >
+              Resume
+            </a>
           </div>
         </div>
       </div>
