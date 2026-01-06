@@ -50,7 +50,7 @@ export default function Projects() {
                   <a
                     className={cn(
                       buttonVariants({ variant: "default", size: "sm" }),
-                      "bg-white text-black px-4 py-2"
+                      "bg-white text-black px-4 py-2 hover:bg-[#2a613f] hover:text-white dark:hover:bg-[#2a613f] dark:hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black/50"
                     )}
                     href={p.live}
                     target="_blank"
@@ -60,8 +60,8 @@ export default function Projects() {
                   </a>
                   <a
                     className={cn(
-                      buttonVariants({ variant: "outline", size: "sm" }),
-                      "bg-white text-black border-white/80"
+                      buttonVariants({ variant: "default", size: "sm" }),
+                      "bg-white text-black px-4 py-2 border-0 hover:bg-[#2a395c] hover:text-white dark:hover:bg-[#2a395c] dark:hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black/50"
                     )}
                     href={p.github}
                     target="_blank"
